@@ -1,4 +1,0 @@
-default.js
-==========
-
-default js
