@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+@import "_extension_import.scss";
+
+#index {
+	#header {
+		h1 {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	main {
+		width: auto;
+		text-align: center;
+
+		> article {
+			text-align: center;
+			letter-spacing: -0.4em;
+
+			> * {
+				letter-spacing: normal;
+			}
+		}
+
+		> article > h1 {
+			margin: 0 auto;
+			border: 7px solid #fff;
+			width: es($base-width);
+			position: relative;
+			margin-bottom: es(10);
+
+			@include box-shadow(0 0 3px rgba(0,0,0,0.2));
+		}
+
+		> article > section {
+			> h1 {
+				margin-bottom: es(10);
+				color: #666;
+				@include fz(28);
+				border-bottom: 1px solid #ccc;
+				text-align: left;
+
+				@include text-shadow(1px 1px 1px #fff);
+
+				span {
+					margin: 0 es(10);
+					@include fz(14);
+				}
+			}
+		}
+	}
+}
+
+#pickup {
+	margin: 0 auto;
+	width: es($base-width);
+	overflow: hidden;
+	padding-bottom: es(20);
+	text-align: left;
+
+	h1 {
+		margin-bottom: es(10);
+		color: #666;
+		@include fz(28);
+		border-bottom: 1px solid #ccc;
+		position: relative;
+
+		@include text-shadow(1px 1px 1px #fff);
+
+
+		&:before {
+			padding: es(3) es(15);
+			content: 'PICKUP !';
+			display: block;
+			background: red;
+			color: #fff;
+			@include fz(12);
+			border-radius: 2px;
+			position: absolute;
+			top: es(10);
+			right: 0;
+			@include text-shadow(none);
+		}
+	}
+
+	img {
+		display: none;
+	}
+	figure {
+		background: #ccc;
+		float: left;
+		margin: 0 es(20) es(10) 0;
+		img {
+			display: block;
+		}
+	}
+
+	.content {
+	}
+}
+
+#recent {
+	padding: 15px 0 0;
+	background: inline-image('bg.gif');
+	text-align: center;
+	letter-spacing: -0.4em;
+	@include box-shadow(0 0 10px rgba(0,0,0,0.2));
+
+	> h1 {
+		margin: 0 auto;
+		width: es($base-width);
+		text-align: left;
+		letter-spacing: normal;
+	}
+}
+
+#consignment {
+	padding: 15px 0 0;
+	background: rgba(0,0,0,0.02);
+	text-align: center;
+	letter-spacing: -0.4em;
+	@include box-shadow(0 0 3px rgba(0,0,0,0.2));
+	position: relative;
+
+	> h1 {
+		margin: 0 auto;
+		width: es($base-width);
+		text-align: left;
+		letter-spacing: normal;
+	}
+}
+
+
+$circle-width: $base-width * 0.4;
+$sp-width: $base-width * 0.55;
+
+#circle,
+#sp {
+	margin: es(20) 0;
+}
+
+#circle {
+	margin-right: es($base-width - ($circle-width + $sp-width));
+	display: inline-block;
+	width: es($circle-width);
+	vertical-align: top;
+	text-align: left;
+
+	figure {
+		margin-bottom: es(10);
+	}
+
+	dt {
+		margin-bottom: es(10);
+	}
+	dd {
+		@include fz(14);
+	}
+}
+
+#sp {
+	display: inline-block;
+	width: es($sp-width);
+	vertical-align: top;
+	text-align: left;
+
+	dd {
+		@include fz(14);
+		margin-bottom: es(35);
+	}
+}
+
+/*----------------------------------------
+	entry
+----------------------------------------*/
+.page,
+.entry,
+.category {
+	main > article > header > h1,
+	main > article > h1 {
+		margin: es(10) 0 es(20) 0;
+		padding: es(8) es(10) es(8) es(10);
+		background: #fcfcfc;
+		background: rgba(255,255,255,0.5);
+		@include fz(32);
+		border-top: 1px dotted #eee;
+		border-bottom: 1px dotted #eee;
+		text-align: center;
+	}
+}
+
+.page,
+.entry {
+	.data {
+		margin-top: es(-20);
+		background: transparent;
+		.category {
+			margin-right: es(10);
+		}
+		.date {
+			float: none;
+			color: #ccc;
+		}
+	}
+	main {
+		.content {
+			img {
+				&:not(.mt-image-none) {
+					margin: es(20) 0;
+					width: 100%;
+				}
+
+				&.mt-image-none {
+					margin: es(20) auto;
+					max-width: es($base-width);
+					display: block;
+				}
+			}
+
+			h2 {
+				margin-top: es(60);
+				border-bottom: 1px solid #eee;
+
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+			ul {
+				li {
+					list-style-type: disc;
+					list-style-position: outside;
+				}
+			}
+
+			p {
+				margin: es(16) 0;
+			}
+
+			ul {
+				margin: es(16) 0;
+			}
+		}
+	}
+}
+
+/*----------------------------------------
+	comments
+----------------------------------------*/
+section#comments {
+	$font-size: 16;
+	$line-height: silver-ratio($font-size);
+	$padding: silver-ratio($font-size) - $font-size;
+	$width:  $base-width - silver-ratio($base-width,true);
+
+	margin-top: es(50);
+	padding-bottom: es($line-height);
+
+	h2 {
+		border-bottom: 1px solid #eee;
+	}
+
+	dl.form {
+		margin: 0 auto;
+		max-width: es($base-width);
+		color: #500;
+
+		@include box-sizing(border-box);
+
+		$border: 2;
+
+		dt {
+			line-height: es($line-height);
+			margin-right: es(-$width,'%',$base-width) !important;
+			width: es($width,'%',$base-width);
+			padding: es($padding) 0;
+			border-top: $border + px dashed #ccc;
+			float: left;
+			clear: both;
+			display: inline;
+			position: relative;
+
+			color: $linkColor;
+
+			&:nth-of-type(1)  {
+				margin-top: 0 !important;
+				border-top: none;
+			}
+
+			&.comment span {
+				display: none;
+			}
+		}
+
+		dd {
+			line-height: es($line-height);
+			margin-left: es($width,'%',$base-width);
+			padding: es($padding) 0;
+			border-top: $border + px dashed #ccc;
+
+			input,
+			textarea {
+				width: 100%;
+			}
+			&.info input {
+				width: inherit;
+			}
+
+			&:nth-of-type(1)  {
+				margin-top: 0;
+				border-top: none;
+			}
+		}
+	}
+
+	p#comments-open-footer {
+		$font-size: 16;
+		$line-height: silver-ratio($font-size);
+		$padding: silver-ratio($font-size) - $font-size;
+		margin: 0 auto;
+		max-width: es($base-width);
+		text-align: center;
+
+		input {
+			@include inline-block;
+			padding: es($padding) 0;
+			line-height: es($line-height);
+			width: 48%;
+
+			&.post:first-child {
+				margin-right: 0;
+				width: 100%;
+			}
+
+			&:first-child {
+				margin-right: 4%;
+			}
+		}
+	}
+}

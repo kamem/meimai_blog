@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+@import "_extension_import";
+
+
+//thumb
+.thumbnailList {
+	$margin: 15;
+	$width: ($base-width - $margin * 2) / 3;
+	letter-spacing: -.4em !important;
+
+	> * {
+		letter-spacing: normal !important;
+	}
+
+	article {
+		width: es($width);
+		display: inline-block;
+		letter-spacing: normal;
+		text-align: left;
+		margin-right: es($margin);
+		margin-bottom: es($margin);
+		vertical-align: top;
+
+		figure {
+			background: #fff;
+			width: 100%;
+			height: es(210);
+			overflow: hidden;
+			position: relative;
+
+			&.noimage {
+				display: table-cell;
+				text-align: center;
+				width: es($width);
+				vertical-align: middle;
+				@include fz(30);
+				color: #ccc;
+				letter-spacing: es(2)
+			}
+
+			img {
+				position: absolute;
+				margin: auto;
+				top: -100%;
+				left: -100%;
+				bottom: -100%;
+				right: -100%;
+			}
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+
+//data
+.data {
+	padding: es(5);
+	background: #999;
+	background: rgba(0,0,0,0.35);
+	overflow: hidden;
+	li {
+		font-size: es(12);
+		&.category {
+			text-align: center;
+			float: left;
+
+			a {
+				padding: 0 es(10);
+				display: block;
+				color: #fff;
+				text-decoration: none;
+				@include border-radius(2px);
+
+				&.announcement {
+					background: $color-announcement;
+				}
+				&.illustration {
+					background: $color-illust;
+				}
+				&.doujin {
+					background-color: $color-doujin;
+				}
+			}
+		}
+		&.date {
+			float: right;
+			color: #fff;
+		}
+	}
+}
+
+// service
+.service {
+	margin: es(10) 0;
+	overflow: hidden;
+	li {
+		margin-right: es(10);
+		float: left;
+		overflow: hidden;
+		list-style-type: none !important;
+		&.twitter {
+			width: 100px;
+		}
+	}
+}
+
+//table
+.table {
+	dt {
+		margin-right: es(10);
+		float: left;
+		clear: both;
+
+	}
+
+	dd {
+		overflow: hidden;
+	}
+}
+
+//banner
+.doujinInfo {
+	text-align: center;
+	li {
+		margin: es(5) 0;
+		&.supplement,
+		&.exhibitors,
+		&.price {
+			margin: 0;
+			text-align: left;
+		}
+		&.supplement {
+			color: #f00;
+		}
+	}
+
+	&.line {
+		li {
+			display: inline-block;
+
+			&:last-child:after {
+				border: none;
+			}
+			&:after {
+				content: '';
+				border-right: 1px solid #ccc;
+				border-left: 1px solid #fff;
+				margin-left: 0.4em;
+			}
+		}
+	}
+}
+
+
+/*----------------------------------------
+	log
+----------------------------------------*/
+dl.log {
+	$font-size: 16;
+	$line-height: silver-ratio($font-size);
+	$padding: $line-height - ((silver-ratio($font-size) - $font-size) / 2);
+	$border: 1;
+
+	max-width: es($base-width);
+	line-height: es($line-height);
+	@include fz($font-size);
+	border-top: $border + px solid #dcc;
+	border-bottom: $border + px solid #fff;
+	margin: es($padding) auto;
+	color: #500;
+
+	dt {
+		padding: es($padding) 0 es($padding / 2) 0;
+		border-top: 1px solid #fff;
+
+		span {
+			color: #dcc !important;
+		}
+
+		&:target {
+			color: $linkColor !important;
+			@include animation-name(blink);
+			@include animation-duration(5s);
+			@include animation-timing-function(ease);
+			@include animation-iteration-count(infinite);
+			& + dd {
+				@extend dt:target;
+
+				p {
+					color: $linkColor !important;
+				}
+			}
+
+			&:nth-of-type(even) {
+				@include animation-name(blink2);
+			}
+		}
+
+		&:nth-of-type(even) {
+				background: rgba(#fff,0.5);
+		}
+	}
+	dd {
+		padding-bottom: es($padding);
+		border-bottom: $border + px solid #dcc;
+
+		p {
+			color: #744 !important;
+		}
+		&:nth-of-type(even) {
+			background: rgba(#fff,0.5);
+		}
+	}
+}

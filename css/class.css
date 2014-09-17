@@ -1,0 +1,198 @@
+@charset "utf-8";
+.thumbnailList {
+  letter-spacing: -.4em !important;
+}
+.thumbnailList > * {
+  letter-spacing: normal !important;
+}
+.thumbnailList article {
+  width: 25.66667rem;
+  display: inline-block;
+  letter-spacing: normal;
+  text-align: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  vertical-align: top;
+}
+.thumbnailList article figure {
+  background: #fff;
+  width: 100%;
+  height: 21rem;
+  overflow: hidden;
+  position: relative;
+}
+.thumbnailList article figure.noimage {
+  display: table-cell;
+  text-align: center;
+  width: 25.66667rem;
+  vertical-align: middle;
+  font-size: 30px;
+  font-size: 3rem;
+  color: #ccc;
+  letter-spacing: 0.2rem;
+}
+.thumbnailList article figure img {
+  position: absolute;
+  margin: auto;
+  top: -100%;
+  left: -100%;
+  bottom: -100%;
+  right: -100%;
+}
+.thumbnailList article:last-child {
+  margin-right: 0;
+}
+
+.data {
+  padding: 0.5rem;
+  background: #999;
+  background: rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.data li {
+  font-size: 1.2rem;
+}
+.data li.category {
+  text-align: center;
+  float: left;
+}
+.data li.category a {
+  padding: 0 1rem;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+.data li.category a.announcement {
+  background: #ff6767;
+}
+.data li.category a.illustration {
+  background: #72da72;
+}
+.data li.category a.doujin {
+  background-color: #3399cc;
+}
+.data li.date {
+  float: right;
+  color: #fff;
+}
+
+.service {
+  margin: 1rem 0;
+  overflow: hidden;
+}
+.service li {
+  margin-right: 1rem;
+  float: left;
+  overflow: hidden;
+  list-style-type: none !important;
+}
+.service li.twitter {
+  width: 100px;
+}
+
+.table dt {
+  margin-right: 1rem;
+  float: left;
+  clear: both;
+}
+.table dd {
+  overflow: hidden;
+}
+
+.doujinInfo {
+  text-align: center;
+}
+.doujinInfo li {
+  margin: 0.5rem 0;
+}
+.doujinInfo li.supplement, .doujinInfo li.exhibitors, .doujinInfo li.price {
+  margin: 0;
+  text-align: left;
+}
+.doujinInfo li.supplement {
+  color: #f00;
+}
+.doujinInfo.line li {
+  display: inline-block;
+}
+.doujinInfo.line li:last-child:after {
+  border: none;
+}
+.doujinInfo.line li:after {
+  content: '';
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #fff;
+  margin-left: 0.4em;
+}
+
+/*----------------------------------------
+	log
+----------------------------------------*/
+dl.log {
+  max-width: 80rem;
+  line-height: 2.3rem;
+  font-size: 16px;
+  font-size: 1.6rem;
+  border-top: 1px solid #ddcccc;
+  border-bottom: 1px solid white;
+  margin: 1.95rem auto;
+  color: #500;
+}
+dl.log dt {
+  padding: 1.95rem 0 0.975rem 0;
+  border-top: 1px solid #fff;
+}
+dl.log dt span {
+  color: #dcc !important;
+}
+dl.log dt:target, dl.log dt:target + dd {
+  color: #777777 !important;
+  -webkit-animation-name: blink;
+  -moz-animation-name: blink;
+  -ms-animation-name: blink;
+  -o-animation-name: blink;
+  animation-name: blink;
+  -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+  -ms-animation-duration: 5s;
+  -o-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-timing-function: ease;
+  -moz-animation-timing-function: ease;
+  -ms-animation-timing-function: ease;
+  -o-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+dl.log dt:target + dd p, dl.log dt:target + dd + dd p {
+  color: #777777 !important;
+}
+dl.log dt:target:nth-of-type(even), dl.log dt:target + dd:nth-of-type(even) {
+  -webkit-animation-name: blink2;
+  -moz-animation-name: blink2;
+  -ms-animation-name: blink2;
+  -o-animation-name: blink2;
+  animation-name: blink2;
+}
+dl.log dt:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.5);
+}
+dl.log dd {
+  padding-bottom: 1.95rem;
+  border-bottom: 1px solid #ddcccc;
+}
+dl.log dd p {
+  color: #744 !important;
+}
+dl.log dd:nth-of-type(even) {
+  background: rgba(255, 255, 255, 0.5);
+}

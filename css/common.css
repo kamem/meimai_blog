@@ -1,0 +1,118 @@
+@charset "utf-8";
+body {
+  background: #fbfbfb;
+}
+
+#header,
+main,
+#footer {
+  margin: 0 auto;
+  text-align: left;
+  width: 80rem;
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+#header {
+  height: 5rem;
+  position: relative;
+  z-index: 5;
+}
+#header h1 {
+  position: absolute;
+  top: -63px;
+  left: -15px;
+}
+#header h1 a {
+  display: block;
+  background: url('../img/title.png?1410801965') 0 0 no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 176px;
+  height: 134px;
+  -webkit-background-size: 176px 134px;
+  -moz-background-size: 176px 134px;
+  -o-background-size: 176px 134px;
+  background-size: 176px 134px;
+}
+
+.gnav,
+.guide {
+  padding: 1.15rem 0;
+  letter-spacing: -0.4em;
+}
+.gnav li,
+.guide li {
+  display: inline-block;
+  letter-spacing: normal;
+  margin-right: 0.8rem;
+  line-height: 1;
+}
+.gnav li a,
+.guide li a {
+  padding: 0.6rem 0;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+.gnav li a:hover,
+.guide li a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+}
+.gnav li.announcement a,
+.guide li.announcement a {
+  background-color: #ff6767;
+}
+.gnav li.illustration a,
+.guide li.illustration a {
+  background-color: #72da72;
+}
+.gnav li.doujin a,
+.guide li.doujin a {
+  background-color: #3399cc;
+}
+
+.gnav {
+  position: absolute;
+  left: 18rem;
+}
+.gnav a {
+  color: #fff;
+  width: 10rem;
+  text-decoration: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.guide {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.guide li {
+  padding-right: 0.8rem;
+  border-right: 1px solid #ccc;
+}
+.guide li:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer {
+  padding: 1px 0;
+  border-top: 1px solid #ccc;
+  background: #fff;
+}
+#footer p {
+  margin: 1rem 0;
+}

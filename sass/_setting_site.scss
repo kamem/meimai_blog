@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+//font
+$font-sizeDefault: 10;
+$font-size: 16;
+$font-unit: rem;
+$font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+
+//ページの横幅
+$base-width: 800;
+
+// 標準テキストカラー
+$text-color: #777;
+
+// 標準リンクカラー
+$linkColor: $text-color;
+$linkColor_hover: #39c;
+$linkColor_visited: rgba(#555,0.7);
+$linkColor_active: #39c;
+
+//mediaQueryの基準となる幅
+$mediaQuery-large: 798;
+$mediaQuery-middle: 756;
+$mediaQuery-small: 650;
+
+$mediaQuery-baseSize: $font-size;
+
+$color-announcement: #ff6767;
+$color-illust: #72da72;
+$color-doujin: #39c;
